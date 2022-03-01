@@ -6,7 +6,6 @@ import Rocket from './Rocket';
 const RocketsList = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
-  console.log(rockets);
 
   useEffect(() => {
     fetchRockets().then((result) => dispatch(getRocket(result)));
