@@ -1,14 +1,28 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets, getRocket } from '../redux/rockets/rockets';
+import Rocket from './Rocket';
 
 const RocketsList = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+  console.log(rockets);
+
+  useEffect(() => {
+    fetchRockets().then((result) => dispatch(getRocket(result)));
+  }, []);
 
   return (
     <>
-      <h3>Hey Rocket List</h3>
+      <h3>Rocket List</h3>
+      {
+        rockets.map((rocket) => (
+          <Rocket
+            key={rocket.id}
+            rocket={rocket}
+          />
+        ))
+      }
     </>
   );
 };
