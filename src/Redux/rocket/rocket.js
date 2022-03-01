@@ -1,4 +1,4 @@
-const GET_ROCKET = 'spacetravelerhub/redux/rocker/GET_ROCKET';
+const GET_ROCKET = 'spacetravelerhub/rocket/GET_ROCKET';
 
 const initialState = [];
 
