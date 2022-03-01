@@ -7,6 +7,13 @@ export const getRocket = (rockets) => ({
   payload: rockets,
 });
 
+export const fetchRockets = async () => {
+  const url = 'https://api.spacexdata.com/v3/rockets';
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
+
 const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ROCKET:
