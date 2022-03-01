@@ -1,4 +1,4 @@
-const GET_ROCKET = 'spacetravelerhub/redux/rocker/GET_ROCKET';
+const GET_ROCKET = 'spacetravelerhub/rocket/GET_ROCKET';
 
 const initialState = [];
 
@@ -7,7 +7,7 @@ export const getRocket = (rockets) => ({
   payload: rockets,
 });
 
-const reducer = (state = initialState, action) => {
+const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ROCKET:
       return [...action.payload];
@@ -16,4 +16,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default rocketReducer;
