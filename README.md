@@ -1,74 +1,65 @@
-# Space-Travelers 
+# React and Redux
 
-> This is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
 
-![screenshot]()
+## Set-up GitHub Actions
 
-## ⚒️  Built with
+This GitHub Action is going to run [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to help you find style issues.
 
-- Html
-- Css
-- JavaScript
-- React
-- Redux
+[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
 
-## 🎞️ Frameworks and Technologies used
+[ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
 
-- Bootstrap
-- Webpack
-- HTML
-- CSS
-- JavaScript
-- ReactJS
+Please do the following **steps in this order**:
 
-## 🖥️ Live Demo
-- [Heroku]() :point_left:
-- [Netlify]() :point_left:
+1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
+    - **Remember** to use the file linked above
+    - **Remember** that `.github` folder starts with a dot.
+2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
+    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
+3. When you open your first pull request you should see the result of the GitHub Actions:
 
-## Getting Started
+![gh actions checks](../assets/images/gh-actions-eslint-stylelint-checks.png)
 
-To get a local copy up and running on your machine, follow these simple steps.
-Enter this in your terminal 👇 
-``` 
-  git clone git@github.com:JEFFKAY16/space-travelers-hub-react.git 
-``` 
-## 🛠️ Prerequisites
-```
-  Install Node.js on your machine
-```
-## 🕹️ Setup
-```
-  Clone the repository on your machine and cd into it
-  run npm install
-  run npm run start
-```
-## Authors
+Click on the `Details` link to see the full output and the errors that need to be fixed:
 
-👤 **Jeff Kayombo**
-- GitHub: [Jeff](https://github.com/JEFFKAY16)
-- LinkedIn: [Jeff]()
+![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
 
-👤 **Qoosim AbdulGhaniyy**
+## Set-up linters in your local env
 
-- GitHub: [Qoosim](https://github.com/Qoosim)
-- LinkedIn: [Qoosim](https://www.linkedin.com/in/qoosim)
+### ESLint
 
-## 🤝 Contributing
+1. Run 
+    ```
+    npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x  @babel/preset-react@7.x @babel/preset-react@7.x
+    ```
+    *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+2. Copy [.eslintrc.json](./.eslintrc.json) and [.babelrc](./.babelrc) to the root directory of your project.
+3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
+    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
+4. Run `npx eslint .` on the root of your directory of your project.
+5. Fix linter errors.
+6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
 
-Contributions, issues, and feature requests are welcome!
+### Stylelint
 
-Feel free to check the [issues page](../../issues/).
+1. Run
 
-## Show your support
+   ```
+   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+   ```
 
-Give a ⭐️ if you like this project!
+   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
 
-## Acknowledgments
+2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
+3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
+   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
+4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
+5. Fix linter errors.
+6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
 
-- To those assist in understanding the concept of React 
+## Test/Deployment Actions
 
-## 📝 License
+Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
 
-This project is [MIT](./MIT.md) licensed.
-
-
+Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
