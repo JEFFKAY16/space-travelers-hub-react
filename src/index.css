@@ -24,15 +24,11 @@ header {
 
 nav a {
   font-size: 1.2rem;
-  padding-right: 1.5rem;
+  padding-right: 1rem;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
 }
 
-.mission {
-  border-right: 1px solid black;
-}
-
 .profile {
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
