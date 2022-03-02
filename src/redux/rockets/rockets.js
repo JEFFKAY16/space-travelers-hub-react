@@ -1,6 +1,7 @@
 const GET_ROCKET = 'spacetravelerhub/rocket/GET_ROCKET';
 const BOOK_ROCKET = 'spacetravelerhub/rocket/BOOK_ROCKET';
 const CANCEL_ROCKET = 'spacetraverhub/rocket/CANCEL_ROCKET';
+const GET_MISSION = 'spacetravelerhub/rocket/GET_MISSION';
 
 const initialState = [];
 
@@ -16,6 +17,11 @@ export const bookRocket = (payload) => ({
 
 export const cancelRocket = (payload) => ({
   type: CANCEL_ROCKET,
+  payload,
+});
+
+export const getMission = (payload) => ({
+  type: GET_MISSION,
   payload,
 });
 
@@ -43,12 +49,12 @@ const rocketReducer = (state = initialState, action) => {
     case CANCEL_ROCKET:
       return state.map((rocket) => {
         if (rocket.rocket_id === action.payload) {
-          return rocket;
+          return {
+            ...rocket,
+            reserved: false,
+          };
         }
-        return {
-          ...rocket,
-          reserved: false,
-        };
+        return rocket;
       });
     default:
       return state;
