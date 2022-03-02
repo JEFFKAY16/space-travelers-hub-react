@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import RocketsList from './components/RocketsList';
-import Mission from './components/Mission';
+import Missions from './components/Missions';
 import Profile from './components/Profile';
 import Nav from './components/Nav';
 
@@ -16,7 +16,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<RocketsList />} />
-          <Route path="/mission" element={<Mission />} />
+          <Route path="/mission" element={<Missions />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
