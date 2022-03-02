@@ -25,6 +25,7 @@ const Nav = () => {
         >
           Missions
         </NavLink>
+        |
         <NavLink
           to="/profile"
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
