@@ -33,7 +33,7 @@ const Rocket = ({ rocket }) => {
         </span>
         {rocket.description}
       </p>
-      <img src={rocket.flickr_images[0]} alt="" />
+      <img src={rocket.flickr_images[0]} alt="Rocket" />
       <button
         type="button"
         className={reserved ? 'button-gray' : 'button-primary'}
