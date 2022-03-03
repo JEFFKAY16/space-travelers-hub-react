@@ -1,7 +1,6 @@
 const GET_ROCKET = 'spacetravelerhub/rocket/GET_ROCKET';
 const BOOK_ROCKET = 'spacetravelerhub/rocket/BOOK_ROCKET';
 const CANCEL_ROCKET = 'spacetraverhub/rocket/CANCEL_ROCKET';
-const GET_MISSION = 'spacetravelerhub/rocket/GET_MISSION';
 
 const initialState = [];
 
@@ -17,11 +16,6 @@ export const bookRocket = (payload) => ({
 
 export const cancelRocket = (payload) => ({
   type: CANCEL_ROCKET,
-  payload,
-});
-
-export const getMission = (payload) => ({
-  type: GET_MISSION,
   payload,
 });
 
