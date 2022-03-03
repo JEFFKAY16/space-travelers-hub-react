@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './css/Missions.css';
 import Mission from './Missions/Mission';
@@ -24,7 +24,13 @@ export default function Missions() {
         <tbody>
           {
             // eslint-disable-next-line max-len
-            missions.map(((mission) => <Mission key={mission.mission_id} status={missions.find((item) => item.mission_id === mission.mission_id).status} data={mission} />))
+            missions.map(((mission) => (
+              <Mission
+                key={mission.mission_id}
+                status={missions.find((item) => item.mission_id === mission.mission_id).status}
+                data={mission}
+              />
+            )))
           }
         </tbody>
       </table>
