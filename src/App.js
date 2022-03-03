@@ -4,9 +4,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import RocketsList from './components/RocketsList';
+import RocketsList from './components/rockets/RocketsList';
 import Missions from './components/Missions';
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 import Nav from './components/Nav';
 
 function App() {
