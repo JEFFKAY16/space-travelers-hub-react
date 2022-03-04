@@ -14,7 +14,6 @@ const RocketsList = () => {
 
   return (
     <>
-      <h3>Rocket List</h3>
       {
         rockets.map((rocket) => (
           <Rocket

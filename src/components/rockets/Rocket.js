@@ -7,41 +7,38 @@ const Rocket = ({ rocket }) => {
   const { reserved } = rocket;
   const dispatch = useDispatch();
 
-  const rocketBooking = () => {
-    dispatch(bookRocket(rocket.rocket_id));
-  };
-
-  const rocketCancelling = () => {
-    dispatch(cancelRocket(rocket.rocket_id));
-  };
-
   const bookingStatus = () => {
     if (reserved) {
-      rocketCancelling();
+      dispatch(cancelRocket(rocket.rocket_id));
     } else {
-      rocketBooking();
+      dispatch(bookRocket(rocket.rocket_id));
     }
   };
 
   return (
     <>
-      <div className="container mx-auto px-4 flex">
+      <div className="container mx-auto mb-6 px-4 flex">
         <img
           src={rocket.flickr_images[0]}
           alt="Rocket"
           className="w-80 mr-9"
         />
         <div>
-          <h3>{rocket.rocket_name}</h3>
-          <p>
-            <span className={reserved ? 'active-badge' : null}>
-              {reserved ? 'Reserved' : null}
+          <h3 className="text-3xl font-mont font-bold">{rocket.rocket_name}</h3>
+          <p className="text-xl pr-4 mt-6 mb-6">
+            <span className={reserved
+              ? 'bg-blue-500 text-sm text-white px-3 mr-2 rounded'
+              : null}
+            >
+              {reserved ? 'Reserve' : null}
             </span>
             {rocket.description}
           </p>
           <button
             type="button"
-            className={reserved ? 'button-gray' : 'button-primary'}
+            className={reserved
+              ? 'bg-gray-200 px-5 py-3 text-2xl text-black font-bold font-inter rounded'
+              : 'bg-blue-500 px-5 py-3 text-2xl text-white font-bold font-inter rounded'}
             onClick={bookingStatus}
           >
             {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
