@@ -20,18 +20,11 @@
   padding: 25px 10px;
   color: #333;
 }
-.profile-section section ul li:last-child{
+
+.profile-section section ul li:last-child {
   border-bottom: none;
 }
 
 .profile-section section h2 {
   color: #333;
 }
-
-/* .profile-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
-  margin: 0 auto;
-} */
