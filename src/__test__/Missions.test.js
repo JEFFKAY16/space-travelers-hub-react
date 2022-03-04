@@ -2,8 +2,8 @@ import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
-import store from '../../redux/store/configureStore';
-import Mission from '../Missions/Mission';
+import store from '../redux/configureStore';
+import Mission from '../components/Missions/Mission';
 
 describe('The missions component', () => {
   test('rendering of the mission component', () => {
