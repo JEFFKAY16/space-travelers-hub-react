@@ -2,7 +2,8 @@
 
 > This is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
-![screenshot]()
+![screenshot](./Images/rocket.png)
+![screenshot](./Images/mission.png)
 
 ## ⚒️  Built with
 
@@ -22,8 +23,7 @@
 - ReactJS
 
 ## 🖥️ Live Demo
-- [Heroku]() :point_left:
-- [Netlify]() :point_left:
+[![](https://img.shields.io/badge/Deployed-Netlify-blueviolet)](https://clever-mclean-8316d1.netlify.app)
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ Enter this in your terminal 👇
 
 👤 **Jeff Kayombo**
 - GitHub: [Jeff](https://github.com/JEFFKAY16)
-- LinkedIn: [Jeff]()
+- LinkedIn: [Jeff](https://www.linkedin.com/in/jeff-kayombo)
 
 👤 **Qoosim AbdulGhaniyy**
 
