@@ -57,6 +57,7 @@
 #missions_table tbody tr td button.leave-btn {
   color: rgb(223, 39, 39);
   border: 1px solid rgb(230, 32, 32);
+  font-size: 12px;
 }
 
 #missions_table tbody tr td button:hover {
