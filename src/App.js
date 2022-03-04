@@ -12,7 +12,7 @@ import Nav from './components/Nav';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="container mx-auto px-2">
         <Nav />
         <Routes>
           <Route path="/" element={<RocketsList />} />

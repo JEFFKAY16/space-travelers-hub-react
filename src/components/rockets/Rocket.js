@@ -4,43 +4,51 @@ import PropTypes from 'prop-types';
 import { bookRocket, cancelRocket } from '../../redux/rockets/rockets';
 
 const Rocket = ({ rocket }) => {
-  const { reserved } = rocket;
+  const {
+    rocket_name: rocketName, rocket_id: rocketId,
+    flickr_images: flickrImages, description,
+    reserved,
+  } = rocket;
   const dispatch = useDispatch();
-
-  const rocketBooking = () => {
-    dispatch(bookRocket(rocket.rocket_id));
-  };
-
-  const rocketCancelling = () => {
-    dispatch(cancelRocket(rocket.rocket_id));
-  };
 
   const bookingStatus = () => {
     if (reserved) {
-      rocketCancelling();
+      dispatch(cancelRocket(rocketId));
     } else {
-      rocketBooking();
+      dispatch(bookRocket(rocketId));
     }
   };
 
   return (
     <>
-      <h2>{rocket.rocket_id}</h2>
-      <h3>{rocket.rocket_name}</h3>
-      <p>
-        <span className={reserved ? 'active-badge' : null}>
-          {reserved ? 'Reserved' : null}
-        </span>
-        {rocket.description}
-      </p>
-      <img src={rocket.flickr_images[0]} alt="Rocket" />
-      <button
-        type="button"
-        className={reserved ? 'button-gray' : 'button-primary'}
-        onClick={bookingStatus}
-      >
-        {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-      </button>
+      <div className="container mx-auto mb-6 px-4 flex">
+        <img
+          src={flickrImages[0]}
+          alt="Rocket"
+          className="w-80 mr-9"
+        />
+        <div>
+          <h3 className="text-3xl font-mont font-bold">{rocketName}</h3>
+          <p className="text-xl pr-4 mt-6 mb-6">
+            <span className={reserved
+              ? 'bg-blue-500 text-sm text-white px-3 mr-2 rounded'
+              : null}
+            >
+              {reserved ? 'Reserve' : null}
+            </span>
+            {description}
+          </p>
+          <button
+            type="button"
+            className={reserved
+              ? 'bg-gray-200 px-5 py-3 text-2xl text-black font-bold font-inter rounded'
+              : 'bg-blue-500 px-5 py-3 text-2xl text-white font-bold font-inter rounded'}
+            onClick={bookingStatus}
+          >
+            {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+          </button>
+        </div>
+      </div>
     </>
   );
 };

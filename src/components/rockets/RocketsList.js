@@ -8,12 +8,12 @@ const RocketsList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // const savedRockets = JSON.parse(localStorage.getItem('rockets'));
     fetchRockets().then((result) => dispatch(getRocket(result)));
   }, []);
 
   return (
     <>
-      <h3>Rocket List</h3>
       {
         rockets.map((rocket) => (
           <Rocket
