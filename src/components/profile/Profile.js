@@ -1,20 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../css/Profile.css';
 
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
-
-  // const rockets = JSON.parse(localStorage.getItem('rockets')) || [];
-
+  const missions = JSON.parse(localStorage.getItem('missions')) || [];
+  const joinedMissions = missions.filter((mission) => mission.status === 'booked');
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
 
   return (
     <div className="container">
-      <div className="my-profile">
-        <section>
-          <h2>My Missions</h2>
-        </section>
+      <div className="my-profile profile-section">
         <section>
           <h2>My Rockets</h2>
           <ul>
@@ -22,6 +19,14 @@ const Profile = () => {
               reservedRockets.map((rocket) => (
                 <li key={rocket.rocket_id}>{rocket.rocket_name}</li>
               ))
+            }
+          </ul>
+        </section>
+        <section>
+          <h2>My Missions</h2>
+          <ul>
+            {
+              joinedMissions.map((mission) => <li key={0}>{mission.mission_name}</li>)
             }
           </ul>
         </section>
