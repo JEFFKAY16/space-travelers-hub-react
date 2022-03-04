@@ -8,19 +8,31 @@ import { joinMission, leaveMission } from '../../redux/missions';
 
 export default function Mission(props) {
   const dispatch = useDispatch();
-  const {
-    mission_name, mission_id, description, status,
-  } = props.data;
+  const { data } = props;
+  const name = data.mission_name;
+  const id = data.mission_id;
+  const { description, status } = data;
+
   return (
     <>
       <tr>
-        <th>{mission_name}</th>
+        <th>{name}</th>
         <td>{description}</td>
-        <td><span className={status === 'booked' ? 'member' : 'not-member'}>{status === 'booked' ? 'Member' : 'Not a member'}</span></td>
+        <td>
+          <span
+            className={status === 'booked'
+              ? 'member'
+              : 'not-member'}
+          >
+            {status === 'booked' ? 'Member' : 'Not a member'}
+          </span>
+        </td>
         <td>
           <button
             type="button"
-            onClick={() => (status === 'booked' ? dispatch(leaveMission(mission_id)) : dispatch(joinMission(mission_id)))}
+            onClick={() => (status === 'booked'
+              ? dispatch(leaveMission(id))
+              : dispatch(joinMission(id)))}
             className={status === 'booked' ? 'leave-btn' : 'join-btn'}
           >
             {status === 'booked' ? 'Leave mission' : 'Join mission'}
