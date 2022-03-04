@@ -55,8 +55,8 @@
 }
 
 #missions_table tbody tr td button.leave-btn {
-  color: #e9251ad1;
-  border: 1px solid #ef2c0b59;
+  color: rgb(223, 39, 39);
+  border: 1px solid rgb(230, 32, 32);
 }
 
 #missions_table tbody tr td button:hover {
@@ -64,12 +64,12 @@
 }
 
 #missions_table tbody tr td span {
-  padding: 2px;
   width: 120px;
   white-space: nowrap;
   font-weight: 500;
   font-size: 14px;
   border-radius: 4px;
+  padding: 5px 10px;
 }
 
 #missions_table tbody tr td span.member {
