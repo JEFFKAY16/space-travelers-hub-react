@@ -5,12 +5,9 @@ import PropTypes from 'prop-types';
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
 
-  const reservedRockets = rockets.filter((rocket) => {
-    if (rocket.reserved) {
-      return rocket;
-    }
-    return null;
-  });
+  // const rockets = JSON.parse(localStorage.getItem('rockets')) || [];
+
+  const reservedRockets = rockets.filter((rocket) => rocket.reserved);
 
   return (
     <div className="container">

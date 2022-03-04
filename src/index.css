@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Karla:ital,wght@0,300;0,600;1,400&display=swap');
 
-.App {
-  text-align: center;
-}
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 header {
   display: flex;

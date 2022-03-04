@@ -25,22 +25,29 @@ const Rocket = ({ rocket }) => {
 
   return (
     <>
-      <h2>{rocket.rocket_id}</h2>
-      <h3>{rocket.rocket_name}</h3>
-      <p>
-        <span className={reserved ? 'active-badge' : null}>
-          {reserved ? 'Reserved' : null}
-        </span>
-        {rocket.description}
-      </p>
-      <img src={rocket.flickr_images[0]} alt="Rocket" />
-      <button
-        type="button"
-        className={reserved ? 'button-gray' : 'button-primary'}
-        onClick={bookingStatus}
-      >
-        {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-      </button>
+      <div className="container mx-auto px-4 flex">
+        <img
+          src={rocket.flickr_images[0]}
+          alt="Rocket"
+          className="w-80 mr-9"
+        />
+        <div>
+          <h3>{rocket.rocket_name}</h3>
+          <p>
+            <span className={reserved ? 'active-badge' : null}>
+              {reserved ? 'Reserved' : null}
+            </span>
+            {rocket.description}
+          </p>
+          <button
+            type="button"
+            className={reserved ? 'button-gray' : 'button-primary'}
+            onClick={bookingStatus}
+          >
+            {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+          </button>
+        </div>
+      </div>
     </>
   );
 };
